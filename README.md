@@ -105,6 +105,14 @@ Finally, build a user interface that shows what currency you are using as a base
 
 Make a fetch request to the following WordPress API endpoint and log the 5 latest posts to the console: https://dev-js-explained-api.pantheonsite.io/wp-json/wp/v2/posts?per_page=5
 
+Note. Maybe you will have to use the next syntax to pass the CORS problem:
+````
+var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+    targetUrl = 'https://dev-js-explained-api.pantheonsite.io/wp-json/wp/v2/posts?per_page=5'
+fetch(proxyUrl + targetUrl)
+````
+
+
 
 Now create a new function called `getPosts( numPosts )` that will return the fetch request for the posts and let you pass in a number of pages in to get.  Create another function called `initPosts()` with a variable called `posts` that awaits the results of `getPosts( 5 )`.
 
