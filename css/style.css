@@ -1,0 +1,9 @@
+#posts > li {
+  padding: 0;
+  list-style-type: none;
+}
+
+#posts > li:hover {
+  cursor: pointer;
+  color: darkblue;
+}
