@@ -5,18 +5,68 @@
   <title>Javascript Fetch</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
-  <header>
-    <h1>My first fetch app</h1>
+  <!-- Page title -->
+  <header class="container-fluid bg-secondary pt-5">
+    <div class="row">
+      <div class="col-8 text-center mx-auto bg-white rounded-top">
+        <h1 class="text-dark text-uppercase pt-5">My first fetch app</h1>
+      </div>
+    </div>
   </header>
-  <main>
-    Nice main
+  
+  <!-- Random dog picture section -->
+  <main class="bg-secondary">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-8 text-center mb-3 mx-auto bg-white px-5 pt-3 pb-5 rounded-bottom">
+          <div class="card" id="dog-picture"></div> <!-- Random dog picture goes here -->
+        </div>
+      </div>
+    </div>
+    
+    <!-- Currency exchange section -->
+    <div class="container-fluid">
+      <div class="row">
+        <ul class="col-8 mb-3 mx-auto bg-white px-5 pt-3 pb-5 rounded">
+          <li class="list-group-item"><span class="pr-3">Please select a currency</span> 
+            <select name="currency" id="currency" onchange="getExchange(value)">
+              <option value=1>EUR</option> <!-- Currencies go here -->
+            </select>
+          </li>
+          <li class="list-group-item">
+            <h4>Exchange Rate per €1.00:<span id="rate" class="pl-3">1.00</span> <!-- Exchange rate goes here -->
+          </li>
+          </h4>
+        </div>
+      </div>
+    </div>
   </main>
-  <footer>
-    Nice footer
+
+  <!-- Posts section -->
+  <footer class="bg-secondary">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-8 text-center mb-3 mx-auto bg-white px-5 pt-3 pb-5 rounded">
+          <h2 class="text-uppercase">Latest Posts</h2> <!-- Latest posts go here -->
+          <ul id="posts" class="text-left"></ul>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div id="post" class="col-8 text-left mb-3 mx-auto bg-white px-5 pt-5 pb-5 rounded"> <!-- Post details go here -->
+        <div>
+      </div>
+    </div>
   </footer>
+  
   <script src="./app.js"></script>
 </body>
+
 </html>
