@@ -1,59 +1,48 @@
 'use strict';
 
-async function main() {
-  let response = await fetch("https://dog.ceo/api/breeds/image/random")
-  console.log(response)
-  let perritos = await response.json()
-  console.log(perritos)
-
-  const main = document.querySelector('main')
-  main.innerHTML = `<img src='${perritos.message}'>`
-
-};
-window.addEventListener('load', main);
-
-/*Info para Alex: 3 variables: 
-con response cojo la info de la API.
-con perritos la transformo (json) para manipular la info
-Pongo const main pq voy al html y busco donde quiero meter el perro
-con el querySelector selecciono la imagen
-Con innerHTML pongo la imagen del perrito en la web
-Pongo perrito.message pq lo veo en la consola de Chrome
-*/
-
+//Iteration 1 -> Dogs
 
 async function getDog() {
-let dogPic = await response.json();
-}
+  let response = await fetch("https://dog.ceo/api/breeds/image/random");
+  //console.log(response);
+  let dogs = await response.json();
+  console.log(dogs);
 
-async function initDogApi() {
-
+  const main = document.querySelector('main');
+  main.innerHTML = `<img src='${dogs.message}'>`;
 
 };
-getDog()
+
+window.addEventListener('load', getDog);
 
 
+
+//Iteration 2 -> Rates
 
 async function getRates() {
   let response = await fetch ("https://api.exchangeratesapi.io/latest")
   console.log(response)
-  let divisas = await response.json()
-  console.log(perritos);
+  let currencies = await response.json()
+  console.log(currencies);
 
 }
 
 
-let divisesDisplay = async () => {
+let currenciesDisplay = async () => {
   const response = await fetch ("https://api.exchangeratesapi.io/latest")
-  const jason = await response.json();
-  //console.log(jason);
-  const select = document.CreateElement('select');
-  //console.log(select);
+  const rates = await response.json();
+  console.log(rates);
+  const select = document.createElement('select');
+  console.log(select);
 
-  for (const key in divises) {
+  for (const key in rates) {
     let option = document.createDocument('option');
-    option.innerHTML = `${key}: ${divises[key]}`; 
-    select.appendChild (option);
+    console.log(option);
+    option.innerHTML = `${key}: ${rates[key]}`; 
+    select.appendChild(option);
   }
 }
-document.getElementById("main").appendChild(select)
+
+document.getElementById("main").appendChild(select);
+
+
